@@ -10,7 +10,7 @@ app.use(bodyparser.json({limit:'50mb'}));
 app.use(bodyparser.urlencoded({limit:'50mb', extended: true}));
 app.use(express.static("assets"));
 
-mongoose.connect("mongodb://127.0.0.1:27017/Ecommerce");
+mongoose.connect("mongodb+srv://sangita:sangita123@cluster0.guqj3.mongodb.net/test");
 const db = mongoose.connection;
 db.on("error", error => console.log(error));
 db.on("open", () => console.log("Connection Establised"));
@@ -42,7 +42,8 @@ app.use("/product", require("./routes/product"));
 app.use("/order", require("./routes/order"));
 app.use("/subscription", require("./routes/subscription"));
 
+const PORT= process.env.PORT||3000;
 
-app.listen(8081, function () {
+app.listen(PORT, function () {
     console.log("Node Server Started");
 });  
