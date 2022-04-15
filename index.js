@@ -10,7 +10,7 @@ app.use(bodyparser.json({limit:'50mb'}));
 app.use(bodyparser.urlencoded({limit:'50mb', extended: true}));
 app.use(express.static("assets"));
 
-mongoose.connect("mongodb+srv://sangita:sangita123@cluster0.guqj3.mongodb.net/test");
+mongoose.connect("mongodb+srv://sangita:sangita123@cluster0.guqj3.mongodb.net/Ecommerce");
 const db = mongoose.connection;
 db.on("error", error => console.log(error));
 db.on("open", () => console.log("Connection Establised"));
